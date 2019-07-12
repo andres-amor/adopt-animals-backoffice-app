@@ -29,6 +29,23 @@ class App extends React.Component {
             email: "andy.7love@gmail.com",
             phone: "099999999"
           }
+        },
+        {
+          id: 2,
+          name: "Clara",
+          type: "cat",
+          gender: "female",
+          breed: "Labrador",
+          birthdate: "2019-07-06",
+          zone: "Buceo",
+          peltColor: "Gris",
+          eyesColor: "Negro",
+          description: "Divertido, mimoso y bueno.",
+          contact: {
+            name: "Andres Amor",
+            email: "andy.7love@gmail.com",
+            phone: "099999999"
+          }
         }
       ]
     }

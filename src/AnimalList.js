@@ -17,9 +17,26 @@ const styles = theme => ({
 });
 
 class AnimalList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nameFilter: ''
+    }
+  }
+
+  handleNameFilterChange = (event) => {
+    this.setState({
+      nameFilter: event.target.value
+    })
+  }
+
   render() {
+    const filteredAnimals = this.props.animals.filter(item => item.name.includes(this.state.nameFilter));
     return (
       <Paper className={this.props.classes.root}>
+        <div>
+          Filtro por nombre: <input name="nameFilter" value={this.state.nameFilter} onChange={this.handleNameFilterChange} />
+        </div>
         <Table>
           <TableHead>
             <TableRow>
@@ -32,7 +49,7 @@ class AnimalList extends React.Component {
             </TableRow>
           </TableHead>
           <TableBody>
-            {this.props.animals.map(item => (
+            {filteredAnimals.map(item => (
               <AnimalListItem
                 animal={item}
                 key={item.id}
